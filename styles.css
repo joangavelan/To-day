@@ -38,7 +38,7 @@ body {
 
 .todo {
     width: 900px;
-    max-height: 950px;
+    max-height: 750px;
     overflow-y: scroll;
     background-color: var(--color-white);
     border-radius: 10px;
