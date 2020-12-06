@@ -18,9 +18,14 @@ const createNewTask = elem => {
 }
 
 const insertTask = () => {
-    const newTask = createNewTask($input.value);
-    $list.insertBefore(newTask, $list.childNodes[0]);
-    $input.value = '';
+    if($input.value.length === 0) {
+        alert('Write something.')
+    }
+    else {
+        const newTask = createNewTask($input.value);
+        $list.insertBefore(newTask, $list.childNodes[0]);
+        $input.value = '';
+    }
 }
 
 
