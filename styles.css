@@ -110,15 +110,22 @@ body {
 }
 
 .todo__task input {
+    position: absolute;
     opacity: 0;
     cursor: pointer;
 }
 
-.todo__task input:checked + i {
+.todo__task input:checked ~ i {
     background-image: url(images/checked.svg);
 }
 
+.todo__task input:checked ~ p {
+    text-decoration: line-through;
+    color: #E6EBEF;
+}
+
 .todo__task label {
+    position: relative;
     display: flex;
     cursor: pointer;
     justify-content: space-between;

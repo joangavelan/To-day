@@ -9,8 +9,8 @@ const createNewTask = elem => {
     
     task.innerHTML = `
     <label>
-        <p>${elem}</p>
         <input type="checkbox" class="todo__check">
+        <p>${elem}</p>
         <i></i>
     </label>
     `
