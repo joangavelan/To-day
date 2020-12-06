@@ -2,13 +2,6 @@ const $input = document.querySelector('.todo__input');
 const $add = document.querySelector('.todo__add');
 const $list = document.querySelector('.todo__list');
 
-const insertTask = () => {
-    $add.addEventListener('click', () => {
-        const newTask = createNewTask($input.value);
-        $list.insertBefore(newTask, $list.childNodes[0]);
-        $input.value = '';
-    })
-}
 
 const createNewTask = elem => {
     const task = document.createElement('li');
@@ -24,6 +17,12 @@ const createNewTask = elem => {
     return task;
 }
 
+const insertTask = () => {
+    const newTask = createNewTask($input.value);
+    $list.insertBefore(newTask, $list.childNodes[0]);
+    $input.value = '';
+}
 
-insertTask();
 
+$add.addEventListener('click', () => insertTask());
+$input.addEventListener('keypress', event => event.keyCode === 13 ? insertTask() : false );
