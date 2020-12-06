@@ -1,12 +1,11 @@
 const $input = document.querySelector('.todo__input');
 const $add = document.querySelector('.todo__add');
 const $list = document.querySelector('.todo__list');
-const $task = document.querySelector('.todo__task');
 
 const insertTask = () => {
     $add.addEventListener('click', () => {
         const newTask = createNewTask($input.value);
-        $list.appendChild(newTask);
+        $list.insertBefore(newTask, $list.childNodes[0]);
         $input.value = '';
     })
 }
@@ -24,3 +23,7 @@ const createNewTask = elem => {
     `
     return task;
 }
+
+
+insertTask();
+

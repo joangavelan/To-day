@@ -111,6 +111,7 @@ body {
 
 .todo__task input {
     opacity: 0;
+    cursor: pointer;
 }
 
 .todo__task input:checked + i {
